@@ -113,32 +113,17 @@ dogFeeder(15,12);
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-// let userChoice = prompt("Please choose rock, paper or scissors!")
-// let computerChoice = Math.random();
-// let choice1 = userChoice;
-// let choice2 = computerChoice;
-
-// if(computerChoice <= 0.33){
-//     computerChoice = "rock";
-// } else if( 0.34 < computerChoice <= 0.66){
-//     computerChoice = "paper";
-// } else if(0.67 < computerChoice <= 1){
-//     computerChoice = "scissors";
-// }
-
-// function compare(choice1, choice2){
-//     if(choice1 === choice2){
-//         return("It's a tie!");
-//     } else if(choice1 === "rock" && choice2 === "scissors"){
-//         return("rock wins!");
-//     } else if(choice1 === "scissors" && choice2 === "paper"){
-//         return("Scissors wins!");
-//     } else if(choice1 === "paper" && choice2 === "rock"){
-//         return("scissors wins!");
-//     }
-// }
-// compare();
-// console.log(choice1, choice2);
+function rps(){
+    let randomNum = Math.random()
+    if (randomNum < .3){
+        console.log("Rock");
+    } else if(randomNum > .3 && randomNum < .6){
+        console.log("Paper");
+    } else if(random > .6){
+        console.log("Scissors");
+    }
+}
+rps()
 
   
   
@@ -167,24 +152,44 @@ console.log(centimeters); // console logs result
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
 
-const number = [1, 2, 3, 4, 5];
 
 function annoyingSong(bottles) {
-for(let i = 0; i <= number.length; i--){
-    console.log(number[i] + " bottles of soda on the wall, " + number[i] + "bottles of soda, " + " take one down pass it around " + number[i] + " bottles of soda on the wall");
+for(let number = 99; number >= 0; number--){
+    console.log(number + " bottles of soda on the wall, " + number + " bottles of soda, " + " take one down pass it around " + number + " bottles of soda on the wall.");
 }
 }
-annoyingSong(99)
+annoyingSong()
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
 //write a javaScript program that takes a mark out of 100 and returns a corisponding letter grade 
 //90s should be A 
 //80s should be B 
-//70s should be Cs 
+//70s should be C
 //60s should be D 
 //and anything below 60 should be F
-  
+
+let students = [['David', 80], ['Samuel', 77], ['Brenda', 88], ['Heather', 95], ['Thomas', 68]];
+
+let avgMarks = 0;
+
+for (let i = 0; i < students.length; i++){
+    avgMarks += students[i][1];
+    var avg = (avgMarks/students.length);
+}
+console.log("Average grade: " + (avgMarks)/students.length);
+
+if(avg < 60){
+    console.log("Grade : F");
+} else if(avg < 70){
+    console.log("Grade : D");
+} else if(avg < 80){
+    console.log("Grade : C");
+} else if(avg < 90){
+    console.log("Grade : B");
+} else if(avg < 100){
+    console.log("Grade : A");
+};
 
   
   
