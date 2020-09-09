@@ -1,11 +1,26 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
+let votingAge = 20;
+if(votingAge > 18){
+    console.log("votingAge is greater than 18, so this is true.");
+} else{
+    console.log("Age is less than 18, so this is false.");
+}
 
 
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+let bankAverage = 10000;
+let bankAccount = 8000;
+if(bankAccount < bankAverage){
+    let bankAccount = "You're broke";
+    console.log(bankAccount);
+} else{
+    let bankAccount = "It's a green day";
+    console.log(bankAccount);
+}
 
 
 
@@ -13,13 +28,18 @@
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-
+let year = "1999";
+console.log(parseInt(year));
 
 
 
 //Task d: Write a function to multiply a*b 
 
-
+function multiply(a, b){
+    return a*b;
+}
+let value = multiply(2,6);
+console.log(value);
 
 
 
@@ -27,6 +47,12 @@
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
+let myAge = 23;
+function humanToDogYears(HumanAge, DogYears){
+    return HumanAge*DogYears;
+}
+let myAgeInDogYears = humanToDogYears(myAge,7);
+console.log(myAgeInDogYears);
 
 
 
@@ -35,9 +61,36 @@
 //Dog feeder 
 //takes weight in pounds and age in years (note if the dog is a puppy the age will be a decimal) and returns the number of pounds of raw food to feed in a day.
 
+// Notes for self *** Remember converted years to months so you could make puppies options in function ***
+
+function dogFeeder(dogWeight, dogAge){
+    if(dogAge >= 12 && dogWeight <= 5){
+        let dogFood = dogWeight * 0.05;
+        console.log(dogFood);
+    } else if(dogAge >= 12 && dogWeight <= 10){
+        let dogFood = dogWeight * 0.04;
+        console.log(dogFood);
+    } else if(dogAge >= 12 && dogWeight <= 15){     
+        let dogFood = dogWeight * 0.03;
+        console.log(dogFood);
+    } else if(dogAge >= 12 && dogWeight > 15){  
+        let dogFood = dogWeight * 0.02;
+        console.log(dogFood);
+    } else if(dogAge <= 4){
+        let puppyFood = dogWeight * 0.10;
+        console.log(puppyFood);
+    } else if(dogAge <= 7){
+        let puppyFood = dogWeight * 0.05;
+        console.log(puppyFood);
+    } else if(dogAge <= 12){
+        let puppyFood = dogWeight * 0.04;
+        console.log(puppyFood);
+    }
+}
+dogFeeder(15,12);
 //feeding requirements
-// adult dogs at least 1 year 
-// up to 5 lbs - 5% of their body weight
+// adult dogs at least 1 year - 
+// up to 5 lbs - 5% of their body weight 
 // 6 - 10 lbs - 4% of their body weight 
 // 11 - 15 lbs - 3% of their body weight 
 // > 15lbs - 2% of their body weight 
@@ -60,19 +113,51 @@
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
+// let userChoice = prompt("Please choose rock, paper or scissors!")
+// let computerChoice = Math.random();
+// let choice1 = userChoice;
+// let choice2 = computerChoice;
+
+// if(computerChoice <= 0.33){
+//     computerChoice = "rock";
+// } else if( 0.34 < computerChoice <= 0.66){
+//     computerChoice = "paper";
+// } else if(0.67 < computerChoice <= 1){
+//     computerChoice = "scissors";
+// }
+
+// function compare(choice1, choice2){
+//     if(choice1 === choice2){
+//         return("It's a tie!");
+//     } else if(choice1 === "rock" && choice2 === "scissors"){
+//         return("rock wins!");
+//     } else if(choice1 === "scissors" && choice2 === "paper"){
+//         return("Scissors wins!");
+//     } else if(choice1 === "paper" && choice2 === "rock"){
+//         return("scissors wins!");
+//     }
+// }
+// compare();
+// console.log(choice1, choice2);
+
   
   
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
+let kilometers = 5; // User types in number of kilometers to be converted
+let miles = kilometers * 0.62137; // Formula to convert
+console.log(miles); // console logs result
 
 
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
+let feet = 12 // Number of feet
+let centimeters = feet * 30.48 // formula to convert ft to cm
+console.log(centimeters); // console logs result
 
 
 
@@ -81,10 +166,15 @@
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
 
+const number = [1, 2, 3, 4, 5];
 
-
+function annoyingSong(bottles) {
+for(let i = 0; i <= number.length; i--){
+    console.log(number[i] + " bottles of soda on the wall, " + number[i] + "bottles of soda, " + " take one down pass it around " + number[i] + " bottles of soda on the wall");
+}
+}
+annoyingSong(99)
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
